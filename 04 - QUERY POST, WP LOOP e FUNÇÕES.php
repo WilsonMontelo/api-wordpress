@@ -11,10 +11,16 @@
 
 <!--FECHA O LOOP -->
 <?php endwhile; else:?>
-<?php endif;?> 
+<?php endif;?>
+
+<!-- IR PARA A PAGINA -->
+<?php the_permalink(); ?>
 
 <!--PEGA O LINK DO POST -->
 <?php the_Permalink()?>
+
+<!--PEGA URL DO POST-->
+<?php bloginfo('url'); ?>/
 
 <!-- PEGA O TITULO DO POST -->
 <?php the_title();?>
@@ -112,6 +118,14 @@ $my_post_cat = get_posts( $args );
 	    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 	 <?php endforeach; ?>
 </ul>
+
+<!--Thumbnail-->
+
+<?php the_post_thumbnail('full', array('class' => '')); ?>
+
+<!-- SHORTCODE -->
+
+<?php echo do_shortcode("[rev_slider banner-principal]"); ?>
 
 <!-- DOCUMENTAÇÃO DO WORDPRESS -->
 http://codex.wordpress.org/Function_Reference/query_posts
